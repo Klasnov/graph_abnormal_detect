@@ -35,7 +35,7 @@ def get_weighted_adjacency_matrix(graph):
     return adj
 
 
-def collate_fn(path="data/train/", index=0):
+def get_batch(path="data/train/", index=0):
     save_path = path + "batch_" + str(index) + "/"
     if not os.path.exists(save_path):
         raise ValueError("The path does not exist")
@@ -251,7 +251,7 @@ def train_vae(net_params, load_save=True, model_path="model/vae/"):
         vae.train()
 
         for i in range(NUM_BATCH):
-            h, pe, e = collate_fn(index=i)
+            h, pe, e = get_batch(index=i)
             h = h.to(DEVICE)
             pe = pe.to(DEVICE)
             e = e.to(DEVICE)
