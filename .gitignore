@@ -1,4 +1,5 @@
-data/actor_overview .csv
+data/actor_overview.csv
 data/train_graphs/*
 data/test_graphs/*
 data/train/*
+data/test/*
