@@ -222,7 +222,7 @@ class DDPM(nn.Module):
         return noise_pred_h_t, noise_pred_e_t
     
 
-def train_ddpm(num_t, beta_1, beta_t, net_params, load_save=True, model_path="model/ddpm/"):
+def train_ddpm(num_t, beta_1, beta_t, net_params, load_save=True, model_path="model/"):
     torch.random.manual_seed(0)
     ddpm = DDPM(num_t, beta_1, beta_t, net_params).to(DEVICE)
     if load_save:

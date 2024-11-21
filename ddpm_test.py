@@ -235,7 +235,8 @@ if __name__ == "__main__":
 
     torch.cuda.empty_cache()
     ddpm = DDPM(num_t, beta_1, beta_t, ddpm_net_params).to(DEVICE)
-    ddpm.load_state_dict(torch.load("model/ddpm/ddpm.pt", weights_only=True))
+    ddpm.load_state_dict(torch.load("model/ddpm.pt", weights_only=True))
+    print("Prediction Results for DDPM")
 
     ddpm.eval()
     normal_losses = []
@@ -263,9 +264,9 @@ if __name__ == "__main__":
     torch.save(normal_possibility, "results/ddpm_normal_possibility.pt")
     print(f"Normal Possibility Mean: {normal_possibility.mean().item():.6f}")
     print(f"Normal Possibility Std: {normal_possibility.std().item():.6f}")
+    print(f"Normal Possibility Median: {normal_possibility.median().item():.6f}")
     print(f"Normal Possibility Max: {normal_possibility.max().item():.6f}")
     print(f"Normal Possibility Min: {normal_possibility.min().item():.6f}")
-    print(f"Normal Possibility Median: {normal_possibility.median().item():.6f}")
     print()
 
     abnormal_losses = []
@@ -293,6 +294,7 @@ if __name__ == "__main__":
     torch.save(abnormal_possibility, "results/ddpm_abnormal_possibility.pt")
     print(f"Abnormal Possibility Mean: {abnormal_possibility.mean().item():.6f}")
     print(f"Abnormal Possibility Std: {abnormal_possibility.std().item():.6f}")
+    print(f"Abnormal Possibility Median: {abnormal_possibility.median().item():.6f}")
     print(f"Abnormal Possibility Max: {abnormal_possibility.max().item():.6f}")
     print(f"Abnormal Possibility Min: {abnormal_possibility.min().item():.6f}")
-    print(f"Abnormal Possibility Median: {abnormal_possibility.median().item():.6f}")
+    

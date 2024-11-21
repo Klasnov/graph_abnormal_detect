@@ -228,7 +228,7 @@ if __name__ == "__main__":
     }
 
     ddpm = DDPM(num_t, beta_1, beta_t, ddpm_net_params).to(DEVICE)
-    ddpm.load_state_dict(torch.load("model/ddpm/ddpm.pt", weights_only=True))
+    ddpm.load_state_dict(torch.load("model/ddpm.pt", weights_only=True))
     torch.cuda.empty_cache()
 
     loss_list = []

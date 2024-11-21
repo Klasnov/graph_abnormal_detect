@@ -222,7 +222,7 @@ if __name__ == "__main__":
     }
 
     vae = vae = VAE(vae_net_params).to(DEVICE)
-    vae.load_state_dict(torch.load("model/vae/vae.pt", weights_only=True))
+    vae.load_state_dict(torch.load("model/vae.pt", weights_only=True))
 
     loss_list = []
     for i in range(NUM_BATCH):

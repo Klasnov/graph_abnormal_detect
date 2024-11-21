@@ -220,7 +220,7 @@ class VAE(nn.Module):
         return h, e, q_mu, q_logvar
     
 
-def train_vae(net_params, load_save=True, model_path="model/vae/"):
+def train_vae(net_params, load_save=True, model_path="model/"):
     torch.random.manual_seed(0)
     vae = VAE(net_params).to(DEVICE)
     if load_save:

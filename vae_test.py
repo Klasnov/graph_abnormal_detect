@@ -229,12 +229,13 @@ if __name__ == "__main__":
 
     torch.cuda.empty_cache()
     vae = vae = VAE(vae_net_params).to(DEVICE)
-    vae.load_state_dict(torch.load("model/model/vae.pt", weights_only=True))
+    vae.load_state_dict(torch.load("model/vae.pt", weights_only=True))
+    print("Prediction Results for VAE")
 
     vae.eval()
     normal_losses = []
     for i in range(TEST_BATCH):
-        h, pe, e = get_batch(path="data/test/normal", index=i)
+        h, pe, e = get_batch(path="data/test/normal/", index=i)
         h = h.to(DEVICE)
         pe = pe.to(DEVICE)
         e = e.to(DEVICE)
@@ -261,7 +262,7 @@ if __name__ == "__main__":
 
     abnormal_losses = []
     for i in range(TEST_BATCH):
-        h, pe, e = get_batch(path="data/test/abnormal", index=i)
+        h, pe, e = get_batch(path="data/test/abnormal/", index=i)
         h = h.to(DEVICE)
         pe = pe.to(DEVICE)
         e = e.to(DEVICE)
@@ -280,6 +281,6 @@ if __name__ == "__main__":
     torch.save(abnormal_possibility, "results/vae_abnormal_possibility.pt")
     print(f"Abnormal Possibility Mean: {abnormal_possibility.mean().item():.6f}")
     print(f"Abnormal Possibility Std: {abnormal_possibility.std().item():.6f}")
+    print(f"Abnormal Possibility Median: {abnormal_possibility.median().item():.6f}")
     print(f"Abnormal Possibility Max: {abnormal_possibility.max().item():.6f}")
     print(f"Abnormal Possibility Min: {abnormal_possibility.min().item():.6f}")
-    print(f"Abnormal Possibility Median: {abnormal_possibility.median().item():.6f}")
