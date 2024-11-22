@@ -249,15 +249,14 @@ if __name__ == "__main__":
         del h, pe, e, pred_h, pred_e, q_mu, q_logvar, loss_data, loss_kl, loss
         torch.cuda.empty_cache()
 
-
     normal_losses = torch.tensor(normal_losses)
-    normal_possibility = gaussian_score(normal_losses, vae_mean, vae_std)
-    torch.save(normal_possibility, "results/vae_normal_possibility.pt")
-    print(f"Normal Possibility Mean: {normal_possibility.mean().item():.6f}")
-    print(f"Normal Possibility Std: {normal_possibility.std().item():.6f}")
-    print(f"Normal Possibility Max: {normal_possibility.max().item():.6f}")
-    print(f"Normal Possibility Min: {normal_possibility.min().item():.6f}")
-    print(f"Normal Possibility Median: {normal_possibility.median().item():.6f}")
+    normal_possibility_density = gaussian_score(normal_losses, vae_mean, vae_std)
+    torch.save(normal_possibility_density, "results/vae_normal_pdf.pt")
+    print(f"Normal Possibility Density Mean: {normal_possibility_density.mean().item():.6f}")
+    print(f"Normal Possibility Density Std: {normal_possibility_density.std().item():.6f}")
+    print(f"Normal Possibility Density Median: {normal_possibility_density.median().item():.6f}")
+    print(f"Normal Possibility Density Max: {normal_possibility_density.max().item():.6f}")
+    print(f"Normal Possibility Density Min: {normal_possibility_density.min().item():.6f}")
     print()
 
     abnormal_losses = []
@@ -277,10 +276,10 @@ if __name__ == "__main__":
         torch.cuda.empty_cache()
 
     abnormal_losses = torch.tensor(abnormal_losses)
-    abnormal_possibility = gaussian_score(abnormal_losses, vae_mean, vae_std)
-    torch.save(abnormal_possibility, "results/vae_abnormal_possibility.pt")
-    print(f"Abnormal Possibility Mean: {abnormal_possibility.mean().item():.6f}")
-    print(f"Abnormal Possibility Std: {abnormal_possibility.std().item():.6f}")
-    print(f"Abnormal Possibility Median: {abnormal_possibility.median().item():.6f}")
-    print(f"Abnormal Possibility Max: {abnormal_possibility.max().item():.6f}")
-    print(f"Abnormal Possibility Min: {abnormal_possibility.min().item():.6f}")
+    abnormal_possibility_density = gaussian_score(abnormal_losses, vae_mean, vae_std)
+    torch.save(abnormal_possibility_density, "results/vae_abnormal_pdf.pt")
+    print(f"Abnormal Possibility Density Mean: {abnormal_possibility_density.mean().item():.6f}")
+    print(f"Abnormal Possibility Density Std: {abnormal_possibility_density.std().item():.6f}")
+    print(f"Abnormal Possibility Density Median: {abnormal_possibility_density.median().item():.6f}")
+    print(f"Abnormal Possibility Density Max: {abnormal_possibility_density.max().item():.6f}")
+    print(f"Abnormal Possibility Density Min: {abnormal_possibility_density.min().item():.6f}")
