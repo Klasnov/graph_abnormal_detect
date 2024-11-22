@@ -1,5 +1,5 @@
-torch
-dgl
-numpy
-pandas
-networkx
+torch==2.1.2
+dgl==1.0.0
+numpy==1.24.4
+pandas==2.0.3
+networkx==3.1.0
