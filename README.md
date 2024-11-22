@@ -54,7 +54,5 @@ In this project, we implemented the Graph Transformer and generation models to d
 ## References
 
 1. [A Generalization of Transformer Networks to Graphs](https://arxiv.org/pdf/2012.09699)
-
 2. [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239)
-
 3. [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114)
