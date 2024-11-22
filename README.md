@@ -37,7 +37,11 @@ The results of the model evaluation are stored in the `results` folder, with the
 
 We visualize the possibility density value of the reconstruction error in the following figure:
 
+
 ![Possibility Density](results/PDF.png)
+
+
+The `report_gml&rlt.ipynb` notebook is the experiment part for the report of this course project, which contains the detailed information of the implementation and results.
 
 
 ## Conclusion
