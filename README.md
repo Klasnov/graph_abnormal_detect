@@ -48,4 +48,13 @@ The `report_gml&rlt.ipynb` notebook is the experiment part for the report of thi
 
 ## Conclusion
 
-In this project, we implemented the Graph Transformer and generation models to detect anomalies in the graph data. The results show that the models are able to detect anomalies effectively, with the DDPM model showing better performance. Due to the time constraint of the course project, we only used a vary simple and naive evaluation method. More advanced evaluation methods like ordinal differential equation (ODE) can be used to improve the performance.
+In this project, we implemented the Graph Transformer and generation models to detect anomalies in the graph data. The results show that the models are able to detect anomalies effectively, with the DDPM model showing better performance. Due to the time constraint of the course project, we only used a vary simple and naive evaluation method. More advanced evaluation methods like ordinal differential equation (ODE) can be used to improve the evaluation process.
+
+
+## References
+
+1. [A Generalization of Transformer Networks to Graphs](https://arxiv.org/pdf/2012.09699)
+
+2. [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239)
+
+3. [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114)
