@@ -1,5 +1,7 @@
 # Anormaly Detection Based on Graph Transformer and Generation Model
 
+###### Team Members: Vincent Leopold Woeste, Shao Yanming, Heng Kok Chin
+
 
 ## Introduction
 
